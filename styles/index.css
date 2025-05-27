@@ -1,0 +1,58 @@
+:root{
+    --Fuente: "Open Sans", sans-serif;/*TIPOGRAFIA*/
+    --ColorPrimario: #04cbc2;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--Fuente);
+}
+
+header{
+    width: 100%;
+    background-color: transparent;
+    height: 60px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 15%;
+    box-shadow: 0 0 3px #0003;
+
+    & p{
+        font-size: 1.1rem;
+    }
+
+    & p::first-letter{
+        font-size: 1.5rem;
+        color: var(--ColorPrimario);
+    }
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .info__container{
+        width: 80%;
+        margin: 5% 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        & h1{
+            color: var(--ColorPrimario);
+        }
+
+        & p{
+            width: 90%;
+        }
+    }
+}
