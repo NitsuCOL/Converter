@@ -34,13 +34,15 @@ header{
 
 main{
     width: 100%;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 
     & .info__container{
         width: 80%;
-        margin: 5% 0;
+        margin-bottom: 5%;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -68,23 +70,15 @@ main{
     & .conversiones__container{
         width: 70%;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-auto-rows: 1fr;
-        grid-auto-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(5, 1fr);
         justify-content: center;
         align-content: center;
         gap: 20px;
 
-        & button{
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
         & .conversion{
             width: 100%;
-            height: 50px;
+            min-height: 50px;
             padding: 2% 5%;
             display: flex;
             justify-content: center;
@@ -92,14 +86,26 @@ main{
             gap: 5px;
             border-radius: 5px;
             border: 1px solid #ccc;
-        }
+            cursor: pointer;
+            transition: box-shadow .1s ease;
 
-        & button:hover{
-
-            & p{
-                border-bottom: 2px solid var(--ColorPrimario);
+            & a{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                text-decoration: none;
+                color: #000;
             }
         }
+
+        & .conversion:hover{
+            box-shadow: 0 0 3px #ccc;
+
+                & p{
+                    border-bottom: 2px solid var(--ColorPrimario);
+                }
+            }
     }
 }
 
@@ -113,4 +119,12 @@ footer{
     font-size: .8rem;
     position: absolute;
     bottom: 0;
+}
+
+/*DISEÑO PARA PANTALLAS MEDIANAS Y GRANDES*/
+@media (min-width: 900px){
+    .conversiones__container{
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-rows: repeat(2, 1fr) !important;
+    }
 }
