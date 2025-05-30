@@ -31,7 +31,7 @@ header{
         right: 0;
 
         & .link-container__menu{
-            background-color: #cccccc98;
+            background-color: #cccccc54;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -40,6 +40,7 @@ header{
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color .2s linear;
 
             & a{
                 text-decoration: none;
