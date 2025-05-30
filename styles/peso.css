@@ -1,0 +1,98 @@
+:root{
+    --Fuente: "Open Sans", sans-serif;/*TIPOGRAFIA*/
+    --ColorPrimario: #04cbc2;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .hamburger__menu{
+        margin-right: 5%;
+        cursor: pointer;
+
+        & #cambio-color__menu{
+            transition: stroke .2s ease-in;
+        }
+    }
+
+    & #links__section{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-auto-rows: 1fr;
+        gap: 10px;
+        padding: 5%;
+        box-shadow: 0 4px 6px #0001;
+        position: absolute;
+        top: 10%;
+        left: 0;
+        right: 0;
+
+        & .link-container__menu{
+            background-color: #cccccc98;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 5%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            & a{
+                text-decoration: none;
+                color: #000;
+                font-size: .9rem;
+            }
+        }
+
+        & .link-container__menu:hover{
+            background-color: #ccccccbe;
+        }
+    }
+}
+
+/*CLASE PARA QUE CAMBIE DE COLOR EL SVG DEL MENU HABURGUESA AL PRESIONARSE*/
+.color-activado{
+    stroke: #04cbc2;
+}
+
+/*CLASE PARA OCULTAR ELEMENTOS*/
+.hiden{
+    display: none !important;
+}
+
+/*CLASES PARA USAR LAS ANIMACIONES*/
+.animacion__entrada {
+    animation: entrada 0.3s ease-out forwards;
+}
+
+.animacion__salida {
+    animation: salida 0.3s ease-in forwards;
+}
+
+/*ANIMACION PARA QUE SE MUESTRE EL MENU DE FORMA PROGRESIVA*/
+@keyframes entrada{
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*ANIMACION PARA QUE SE OCULTE EL MENU DE FORMA PROGRESIVA*/
+@keyframes salida{
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}

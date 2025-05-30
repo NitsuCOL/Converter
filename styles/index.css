@@ -17,7 +17,7 @@ header{
     display: flex;
     justify-content: start;
     align-items: center;
-    padding-left: 15%;
+    padding-left: 5%;
     box-shadow: 0 0 3px #0003;
 
     & p{
@@ -123,6 +123,10 @@ footer{
 
 /*DISEÑO PARA PANTALLAS MEDIANAS Y GRANDES*/
 @media (min-width: 900px){
+    header{
+        padding: 0 10%;
+    }
+
     .conversiones__container{
         grid-template-columns: repeat(3, 1fr) !important;
         grid-template-rows: repeat(2, 1fr) !important;
